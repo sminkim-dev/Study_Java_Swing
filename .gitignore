@@ -1,0 +1,27 @@
+# 자바 컴파일된 바이트코드 및 빌드 폴더
+*.class
+bin/
+
+# 이클립스 IDE 설정 파일
+.settings/
+
+# 운영체제(OS) 부산물
+.DS_Store
+Thumbs.db
+
+# 로그 및 임시 파일
+*.log
+
+# Eclipse workspace local metadata
+.metadata/
+
+# Local study images (exclude from Git)
+*.[jJ][pP][gG]
+*.[jJ][pP][eE][gG]
+*.[pP][nN][gG]
+*.[gG][iI][fF]
+*.[wW][eE][bB][pP]
+*.[bB][mM][pP]
+*.[tT][iI][fF]
+*.[tT][iI][fF][fF]
+*.[aA][vV][iI][fF]
