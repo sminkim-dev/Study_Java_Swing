@@ -124,18 +124,22 @@ public class exam_12 extends JFrame {
             int rightEdge = Math.max(0, c.getWidth() - m.getWidth());
             m_position.x += 5;
             if (m_position.x >= rightEdge) {
+                m_position.x = rightEdge;
+                m.setLocation(m_position);
+
+                // 몬스터 아래쪽이 발사대 위쪽 높이에 도달한 상태에서
+                // 오른쪽 끝까지 이동했을 때만 게임을 종료한다.
+                if (m_position.y + m.getHeight() >= l.getY()) {
+                	//m.setVisible(false);
+                	m.setBackground(Color.RED);
+                    finishGame();
+                    return;
+                }
+
                 m_position.x = 0;
                 m_position.y += 50;
             }
             m.setLocation(m_position);
-            // 가로 위치와 관계없이 발사대의 세로 영역에 들어오면 게임 종료.
-            int monsterTop = m.getY();
-            int monsterBottom = monsterTop + m.getHeight();
-            int launcherTop = l.getY();
-            int launcherBottom = launcherTop + l.getHeight();
-            if (monsterBottom > launcherTop && monsterTop < launcherBottom) {
-                finishGame();
-            }
         }
 
         @Override
